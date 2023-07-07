@@ -1,0 +1,37 @@
+#header {
+    display: inline;
+    text-align: center;
+    list-style-type: none;
+
+}
+
+
+.a {
+    display: inline-block;
+    padding: 5px;
+    margin: 1px;
+}
+
+.group1_1 {
+    position: absolute;
+    width: 80px;
+    list-style-type: none;
+    background-color: rgb(139, 138, 138,0.5);
+    display: none;
+   padding: 0;
+    text-align: left;
+   
+}
+.b{
+    display: block;
+    padding: 5px 10px 5px 0;
+}
+
+.b a{
+    text-decoration: none;
+    text-align: left;
+    display: inline-block;
+}
+.a:hover ul{
+    display: block;
+}

@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>專題</title>
+    <link rel="stylesheet" href="./_css/bootstrap.css">
+    <link rel="stylesheet" href="./_css/loading.min.css">
+    <link rel="stylesheet" href="./_css/kvanim.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <script src="./_js/bootstrap.bundle.js"></script>
+    <style>
+        #logo {
+            width: 40px;
+            text-align: center;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0, 0, 50px, 0;
+            display: flex;
+            display: inline-block;
+
+        }
+
+        .a {
+            display: inline-block;
+            color: white;
+            padding: 20px;
+        }
+
+        .a:hover {
+
+            background-color: white;
+            color: black;
+
+        }
+
+        .a ul {
+            display: none;
+            position: absolute;
+        }
+
+        .a:hover ul {
+            display: block;
+            background: linear-gradient(135deg, #1354FF 0%, #21287B 50%, #682ACA 100%);
+            text-decoration: none;
+            text-align: left;
+            list-style-type: none;
+        }
+
+        .a ul {
+            padding: 0;
+        }
+
+        .a li {
+            text-decoration: none;
+            text-align: left;
+            padding: 10px;
+            display: block;
+        }
+
+        .a a {
+            display: block !important;
+            text-decoration: none;
+            color: white;
+        }
+
+        .a .inli:hover {
+            background-color: white;
+        }
+
+        .a .inli:hover a {
+            color: black;
+        }
+
+        #sign_in {
+            text-decoration: none;
+            color: white;
+        }
+
+        #login {
+
+            position: fixed;
+            z-index: 1;
+            background-color: rgba(168, 168, 168, 0.6);
+            width: 100%;
+            height: 100%;
+
+        }
+
+        #loginform {
+            position: relative;
+            top: 120px;
+            height: 500px;
+            width: 400px;
+        }
+
+        #loginform>div {
+            text-align: center;
+
+            width: 100px;
+            padding: 20px;
+        }
+
+        #loginform>h5 {
+            text-align: left;
+        }
+
+        #loginform button {
+            border-radius: 10px;
+            width: 200px;
+        }
+
+
+        #signin,
+        #signup {
+            border: none;
+            color: white;
+
+            text-align: center;
+            text-decoration: none;
+            background-color: black;
+        }
+
+        #logout button {
+            border: none;
+            color: white;
+
+            text-align: center;
+            text-decoration: none;
+            background-color: black;
+        }
+
+        #top {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            width: 50px;
+            height: 50px;
+            background-image: url("./top-removebg-preview.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+
+        #top:hover {
+
+            width: 55px;
+            height: 55px;
+        }
+
+
+
+        #circle {
+            text-align: center;
+        }
+
+        #cirpcte {
+            height: 500px;
+            text-align: center;
+        }
+
+        #cirpcte img {
+            height: 500px;
+            object-fit: contain
+        }
+
+        #smpct {
+            width: 888px;
+            margin: auto;
+        }
+
+        #smpct div {
+            padding: 0;
+        }
+
+        #smpct img {
+            height: 124px;
+            opacity: 0.6;
+
+        }
+
+        #smpct img:hover {
+            opacity: 1;
+            cursor: pointer;
+        }
+
+        .secobtn {
+            border-radius: 15px;
+            border: none;
+            -webkit-box-shadow: 5px 5px 6px 5px #000000;
+            box-shadow: 5px 5px 6px 5px #000000;
+            height: 40px;
+
+        }
+
+        .secobtn:hover {
+            border-radius: 15px;
+            border: none;
+            -webkit-box-shadow: 10px 10px 15px 0px #000000;
+            box-shadow: 10px 10px 15px 0px #000000;
+            height: 42px;
+        }
+
+        .secobtn:focus {
+            border-radius: 15px;
+            border: none;
+            -webkit-box-shadow: 18px 19px 25px 11px rgba(0, 0, 0, 0.76);
+            box-shadow: 18px 19px 25px 11px rgba(0, 0, 0, 0.76);
+            height: 45px;
+        }
+
+        .areap {
+
+            background: rgb(0, 0, 0);
+            background: linear-gradient(313deg, rgba(94, 94, 94, 1) 0%, rgba(0, 0, 0, 1) 100%);
+
+        }
+
+        .areap h2,
+        .areap span {
+            color: wheat;
+
+        }
+
+        .areabt {
+            align-items: flex-end;
+        }
+
+        .timerec {
+            font-size: 45px;
+            border: 2px solid black;
+            color: white;
+            border-radius: 5px;
+            padding: 5px;
+            transform: rotateY(180deg);
+            animation-duration: 2s;
+        }
+
+        .timerecd {
+            display: inline-block;
+        }
+
+        #secdid {
+            animation: apple 1s infinite;
+        }
+
+        .sectc {
+            animation: apple 1s infinite;
+            display: inline-block;
+        }
+
+
+        @keyframes apple {
+            0% {
+                transform: rotatex(0deg);
+            }
+
+            100% {
+                transform: rotatex(360deg);
+            }
+
+        }
+
+        .timerecd:hover {
+            display: inline-block;
+
+
+        }
+
+        .timecolon {
+            font-size: 45px;
+        }
+
+        .salerow {
+            background-color: #1354FF;
+            border-radius: 50px;
+            height: 120px;
+            display: flex;
+            /* margin: 50px 0; */
+            background: #130CD7;
+            background: -moz-linear-gradient(-45deg, #130CD7 0%, #4E56DC 50%, #5F97D5 100%);
+            background: -webkit-linear-gradient(-45deg, #130CD7 0%, #4E56DC 50%, #5F97D5 100%);
+            background: linear-gradient(135deg, #130CD7 0%, #4E56DC 50%, #5F97D5 100%);
+        }
+
+        .saleimg {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .saletext h2 {
+            padding: 10px 0;
+            color: antiquewhite
+        }
+
+        .saletext span {
+            color: azure;
+        }
+
+        .salebtn p {
+            font-size: 25px;
+            padding: 10px 0 0 0;
+            margin: 5px;
+        }
+
+        .salebtn button {
+            border: 3px solid black;
+            width: 50%;
+            background-color: lawngreen;
+        }
+
+        .salebtn button:hover {
+            border: 3px solid black;
+            width: 50%;
+            background: #FFFFFF;
+            background: -moz-linear-gradient(-45deg, #FFFFFF 0%, #83FF53 50%, #7CFC00 100%);
+            background: -webkit-linear-gradient(-45deg, #FFFFFF 0%, #83FF53 50%, #7CFC00 100%);
+            background: linear-gradient(135deg, #FFFFFF 0%, #83FF53 50%, #7CFC00 100%);
+        }
+
+        .saleman {
+            background-repeat: no-repeat;
+            background-size: contain;
+            box-sizing: border-box;
+            margin: -45px 50px -45px auto;
+            width: 75px;
+            height: 75px;
+
+            visibility: hidden;
+        }
+        .salemanonbuy {
+            background-repeat: no-repeat;
+            background-size: contain;
+            box-sizing: border-box;
+            margin: -45px 50px -45px auto;
+            width: 75px;
+            height: 75px;
+          
+        }
+
+        .salemans {
+            background-repeat: no-repeat;
+            background-size: contain;
+            box-sizing: border-box;
+            margin: -45px 50px -45px auto;
+            width: 75px;
+            height: 75px;
+            animation: sales 1s;
+
+        }
+
+        .salemen {
+            background-repeat: no-repeat;
+            background-size: contain;
+            box-sizing: border-box;
+            margin: -45px 50px -45px auto;
+            width: 75px;
+            height: 75px;
+            animation: sale 1s;
+
+        }
+
+        .salemanbuy {
+            background-repeat: no-repeat;
+            background-size: contain;
+            box-sizing: border-box;
+            width: 75px;
+            height: 75px;
+            animation: salebuy 3s infinite linear;
+
+        }
+
+        @keyframes sale {
+            0% {
+                animation-timing-function: cubic-bezier(0.138, 0.2541, 0.2177, 0.8747);
+                transform: translate(0, 0%) scaleY(1) scalex(0);
+            }
+
+            37% {
+                animation-timing-function: cubic-bezier(0.7679, 0.1817, 0.8401, 0.7167);
+                transform: translate(0, -200.96%) scaleY(1) scalex(0);
+            }
+
+            72.2% {
+                animation-timing-function: cubic-bezier(0.1045, 0.2026, 0.2224, 0.9608);
+                transform: translate(0, 0%) scaleY(1);
+            }
+
+            87.2% {
+                animation-timing-function: cubic-bezier(0.7463, 0.2314, 0.8159, 0.6941);
+                transform: translate(0, 19.85%) scaleY(0.603);
+            }
+
+            100% {
+                transform: translate(0, 0%) scaleY(1);
+
+            }
+        }
+
+        @keyframes sales {
+            0% {
+                transform: translate(0, 0%) scaleY(1);
+
+            }
+
+            37% {
+                animation-timing-function: cubic-bezier(0.7463, 0.2314, 0.8159, 0.6941);
+                transform: translate(0, 19.85%) scaleY(0.603);
+
+            }
+
+            72.2% {
+                animation-timing-function: cubic-bezier(0.1045, 0.2026, 0.2224, 0.9608);
+                transform: translate(0, 0%) scaleY(1);
+            }
+
+            87.2% {
+
+                animation-timing-function: cubic-bezier(0.7679, 0.1817, 0.8401, 0.7167);
+                transform: translate(0, -200.96%) scaleY(1) scalex(0);
+
+
+
+            }
+
+            100% {
+                animation-timing-function: cubic-bezier(0.138, 0.2541, 0.2177, 0.8747);
+                transform: translate(0, 0%) scaleY(1) scalex(0);
+
+            }
+        }
+
+
+        @keyframes salebuy {
+            0% {
+                margin: -45px 50px -45px auto;
+                transform: translate(0, 0) rotate(0deg);
+            }
+
+            10% {
+                margin: -45px 150px -45px auto;
+                transform: translate(0, -100.96%) rotate(-180deg);
+            }
+
+            20% {
+                margin: -45px 250px -45px auto;
+                transform: translate(0, 0) rotate(-360deg);
+            }
+
+            30% {
+                margin: -45px 350px -45px auto;
+                transform: rotate(-360deg);
+            }
+
+            31% {
+                margin: -45px 350px -45px auto;
+                transform: rotate(-360deg);
+                opacity: 1;
+            }
+
+            35% {
+                margin: -45px 350px -45px auto;
+                transform: rotate(-360deg) scalex(1);
+                opacity: 1;
+            }
+
+            70% {
+                margin: -45px 350px -45px auto;
+                transform: scalex(1);
+                opacity: 1;
+            }
+
+            75% {
+                margin: -45px 350px -45px auto;
+                transform: scalex(0);
+                opacity: 1;
+            }
+
+
+            80% {
+                margin: -45px 50px -45px auto;
+                transform: scalex(1);
+                opacity: 1;
+            }
+
+
+            100% {
+                margin: -45px 50px -45px auto;
+                transform: rotate(0deg);
+            }
+        }
+    </style>
+
+</head>
+
+<body onload="animkv()" style="background: #000000;
+background: -moz-linear-gradient(top, #000000 0%, #88A2B9 50%, #000000 100%);
+background: -webkit-linear-gradient(top, #000000 0%, #88A2B9 50%, #000000 100%);
+background: linear-gradient(to bottom, #000000 0%, #88A2B9 50%, #000000 100%);">
+
+    <div class="w-100 d-flex" style="background-color: black; height: 60px;position: fixed; z-index: 10;
+    top: 0;
+    right: 0;
+    left: 0;">
+        <div style="position: relative;background-color: black; width: 55%;height: 50px;text-align: right;">
+            <div>
+                <a href="./topic_3.html"><img src="./LOGO-removebg-preview.png" style="display: inline-block;"
+                        id="logo"></a>
+                <ul>
+
+                    <li class="a ">首頁
+                        <ul>
+                            <li class="inli"><a href="">商店</a></li>
+                            <li class="inli"><a href="">希望清單</a></li>
+                        </ul>
+                    </li>
+                    <li class="a">社群</li>
+                    <li class="a">客服中心</li>
+                </ul>
+            </div>
+        </div>
+        <div style="display: block; " class="ms-auto" style="width: 100px ;height: 50px;">
+            <div style="display:none ;" id="logout">
+                <span id="loginhi" style="color:white; text-align: center;"></span>
+                <button onclick="log_out()">登出</button>
+            </div>
+            <ul id="loginbar">
+                <li><button onclick="signin()" id="signin">登入</button> </li>
+                <li><a href="./sign_up.html"><button id="signup">註冊</button> </a> </li>
+            </ul>
+        </div>
+    </div>
+
+
+
+    <div>
+        <div id="backp" style="display: black; ; z-index: 20;">
+            <img class="ld ld-bounce apple" id="anim" src="./King_Slime.png" style="animation-duration:5s" />
+        </div>
+    </div>
+
+
+
+
+    <div id="login" style="display: none;">
+        <div class="container   bg-warning " id="loginform">
+            <div>
+                <h5>帳號</h5>
+                <input type="text" id='userid' required>
+            </div>
+            <div>
+                <h5>密碼</h5>
+                <input type="password" id="userpd" required>
+            </div>
+            <div class='w-100' style="text-align: left;">
+                <input type="checkbox">
+                <span style="font-size: 12px;">保持登入</span>
+            </div>
+            <div class="w-100" style="text-align: left;">
+                <p style="color: red;" id="alarm"></p>
+            </div>
+            <div class="w-100">
+                <button onclick="loginck()">登入</button>
+            </div>
+            <hr>
+            <div class="w-100" style="text-align: left;"><a href="">忘記密碼</a></div>
+        </div>
+    </div>
+    <a href="#">
+        <div id="top"></div>
+    </a>
+
+    <br><br><br>
+    <div class="container">
+        <div id="kv">
+            <h1>CoreKeeper-地心守護者</h1>
+            <br>
+            <div class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000" id="circle">
+                <!-- 下標按鈕 -->
+
+                <!-- <div class="carousel-indicators">
+                <button type="button" data-bs-target="#circle" data-bs-slide-to="0" class="active" aria-current="true"
+                    aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#circle" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#circle" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                <button type="button" data-bs-target="#circle" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            </div> -->
+                <div>
+                    <div class="carousel-inner" id="cirpcte">
+                        <div class="carousel-item active">
+                            <img src="./圖.png" alt="">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./圖1.png" alt="">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./圖2.png" alt="">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="./圖3.png" alt="">
+                        </div>
+                    </div>
+
+                    <div class="row" id="smpct">
+                        <div class="col" style="text-align: center;"><img src="./圖.png" style="object-fit: contain"
+                                data-bs-target="#circle" data-bs-slide-to="0" class="active" aria-current="true"
+                                aria-label="Slide 1" alt="">
+                        </div>
+                        <div class="col" style="text-align: center;"><img src="./圖1.png" style="object-fit: contain"
+                                data-bs-target="#circle" data-bs-slide-to="1" aria-label="Slide 2 alt="">
+                    </div>
+                    <div class=" col" style="text-align: center;"><img src="./圖2.png" style="object-fit: contain"
+                                data-bs-target="#circle" data-bs-slide-to="2" aria-label="Slide 3" alt="">
+                        </div>
+                        <div class="col" style="text-align: center;"><img src="./圖3.png" style="object-fit: contain"
+                                data-bs-target="#circle" data-bs-slide-to="3" aria-label="Slide 4" alt="">
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <!-- 左右按鈕 -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#circle" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#circle" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <!-- aria開頭為無障礙說明 -->
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+
+            <div
+                style="height: 3px; background: linear-gradient(313deg, rgba(0,0,0,1) 0%, rgba(255,255,255,1) 50%, rgba(0,0,0,1) 100%); margin: 150px 0 100px 0 ;">
+            </div>
+        </div>
+
+
+        <div id="sectionone">
+            <h1>地區</h1>
+            <div class="row m-3" style="height: 50px;">
+                <div class="col-3 d-flex areabt"><button class="w-100 secobtn" style=" background-color: dimgrey;"
+                        onclick="sobt(startp)">起始區</button></div>
+                <div class="col-3 d-flex areabt"><button class="w-100 secobtn" style="background-color: orange;"
+                        onclick="sobt(mucusp)">泥土區</button></div>
+                <div class="col-3 d-flex areabt"><button class="w-100 secobtn" style="background-color: pink;"
+                        onclick="sobt(insectp)">幼蟲巢穴</button></div>
+                <div class="col-3 d-flex areabt"><button class="w-100 secobtn"
+                        style="background-color: #21287B;color: white; " onclick="sobt(abandonedp)">被遺忘的廢墟</button>
+                </div>
+            </div>
+            <div class="row m-3" style="height: 50px;">
+                <div class="col-3 d-flex areabt"><button class="w-100 secobtn" style=" background-color: green;"
+                        onclick="sobt(grassp)">埃奇歐斯荒野</button></div>
+                <div class="col-3 d-flex areabt"><button class="w-100 secobtn" style="background-color: lightgrey;"
+                        onclick="sobt(moldp)">黴菌區</button></div>
+                <div class="col-3 d-flex areabt"><button class="w-100 secobtn" style="background-color: lightskyblue;"
+                        onclick="sobt(oceanp)">海洋區</button></div>
+                <div class="col-3 d-flex areabt"><button class="w-100 secobtn"
+                        style="background-color: rgb(221, 171, 7); " onclick="sobt(desertp)">沙漠區</button></div>
+            </div>
+            <br>
+            <div class="mt-5" style="display: block;" id="startp">
+                <div class="row " style="padding: 0;">
+                    <div class="col-8"><img src="./起始區.png" alt="" style="width:100%;border: 3px solid ;"></div>
+                    <div class="col-4 areap">
+                        <h2 class="my-5" style="border-left:5px solid orange ;">起始區</h2>
+                        <span style="font-size: 22px;">人物創始時，從這邊出現，中間雕像會告訴你主線任務，而旁邊附近的雕像則是需要收集到特殊物品才能啟動，由這裡開始你的地下城生活
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-5" style="display: none;" id="mucusp">
+                <div class="row">
+                    <div class="col-8"><img src="./小史萊姆.png" alt="" style="width:100%;border: 3px solid ;"></div>
+                    <div class="col-4 areap">
+                        <h2 class="my-5" style="border-left:5px solid orange ;">泥土區</h2>
+                        <span style="font-size: 22px;">起始區的旁邊就開始遇到第一種怪物-黏液史萊姆，要小心長刺的史萊姆會主動攻擊，還有可能遇到史萊姆王
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-5" style="display: none;" id="insectp">
+                <div class="row">
+                    <div class="col-8"><img src="./蟲母.png" alt="" style="width:100%;border: 3px solid ;"></div>
+                    <div class="col-4 areap">
+                        <h2 class="my-5" style="border-left:5px solid orange ;">幼蟲巢穴</h2>
+                        <span style="font-size: 22px;">前期最危險的地方，不只怪物跑速快，攻擊也很高，還需小心地板上的尖刺，但最讓人不想靠近的原因是因為牆壁會蠕動
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-5" style="display: none;" id="abandonedp">
+                <div class="row">
+                    <div class="col-8"><img src="./鐵礦區.png" alt="" style="width:100%;border: 3px solid ;"></div>
+                    <div class="col-4 areap">
+                        <h2 class="my-5" style="border-left:5px solid orange ;">被遺忘的廢墟</h2>
+                        <span style="font-size: 22px;">升到中期所需要資源，在這裡都找的到，但需要小心這裡的居民是非常排外的
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-5" style="display: none;" id="grassp">
+                <div class="row">
+                    <div class="col-8"><img src="./叢林區.png" alt="" style="width:100%;border: 3px solid ;"></div>
+                    <div class="col-4 areap">
+                        <h2 class="my-5" style="border-left:5px solid orange ;">埃奇歐斯荒野</h2>
+                        <span style="font-size: 22px;">迎來了遊戲中第一隻泰坦-天空泰坦．埃奇歐斯，除此之外還須小心躲在草叢的農夫
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-5" style="display: none;" id="moldp">
+                <div class="row">
+                    <div class="col-8"><img src="./發霉區.png" alt="" style="width:100%;border: 3px solid ;"></div>
+                    <div class="col-4 areap">
+                        <h2 class="my-5" style="border-left:5px solid orange ;">黴菌區</h2>
+                        <span style="font-size: 22px;">來到這裡必須注意，怪物攻擊高血量厚，重要的是踩在黴菌區還會被緩數，被怪物丟到還是暈眩無法動彈，堪稱中期死亡率最高的地方
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-5" style="display: none;" id="oceanp">
+                <div class="row">
+                    <div class="col-8"><img src="./海洋區.png" alt="" style="width:100%;border: 3px solid ;"></div>
+                    <div class="col-4 areap">
+                        <h2 class="my-5" style="border-left:5px solid orange ;">海洋區</h2>
+                        <span style="font-size: 22px;">以海為主題的地圖，可以開著船到處遨遊，尋找著遊戲的第二隻泰坦-海洋泰坦．歐墨若斯
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-5" style="display: none;" id="desertp">
+                <div class="row">
+                    <div class="col-8"><img src="./沙漠區.png" alt="" style="width:100%;border: 3px solid ;"></div>
+                    <div class="col-4 areap">
+                        <h2 class="my-5" style="border-left:5px solid orange ;">沙漠區</h2>
+                        <span style="font-size: 22px;">最新的地圖，包含著岩漿地區，與海洋一樣有著專屬的交通工具-汽車，還有著第三隻泰坦-黄沙泰坦·拉阿卡爾
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br><br><br>
+
+        <div
+            style="height: 3px; background: linear-gradient(to right, #FFFFFF 0%, #000000 50%, #FFFFFF 100%); margin: 150px 0 100px 0 ;">
+        </div>
+
+        <div id="sectiontwo">
+            <h1 style="margin-bottom: 20px;">限定優惠</h1>
+            <div id="daytid" class="timerecd" style="transition: transform 0.2s;
+            transform-style: preserve-3d;  animation-name: apple;  animation-duration:1s"><span id="dayt"
+                    class="timerec"></span></div>
+            <div id="daydid" class="timerecd" style="transition: transform 0.2s;
+            transform-style: preserve-3d;  animation-name: apple;  animation-duration:1s"><span id="dayd"
+                    class="timerec"></span></div>
+            <span class="timecolon">:</span>
+            <div id="hourtid" class="timerecd" style="transition: transform 0.2s;
+            transform-style: preserve-3d;  animation-name: apple;  animation-duration:1s"><span id="hourt"
+                    class="timerec "></span></div>
+            <div id="hourdid" class="timerecd" style="transition: transform 0.2s;
+            transform-style: preserve-3d;  animation-name: apple;  animation-duration:1s"><span id="hourd"
+                    class="timerec"></span></div>
+            <span class="timecolon">:</span>
+            <div id="mintid" class="timerecd" style="transition: transform 0.2s;
+            transform-style: preserve-3d;  animation-name: apple;  animation-duration:1s"><span id="mint"
+                    class="timerec "></span></div>
+            <div id="mindid" class="timerecd" style="transition: transform 0.2s;
+            transform-style: preserve-3d;  animation-name: apple;  animation-duration:1s"><span id="mind"
+                    class="timerec "></span></div>
+            <span class="timecolon">:</span>
+            <div id="sectid" class=" timerecd" style="transition: transform 0.2s;
+            transform-style: preserve-3d;  animation-name: apple;  animation-duration:1s"><span id="sect"
+                    class="timerec  "></span></div>
+
+            <div id="secdid" class="timerecd">
+                <span id="secd" class="timerec  "></span>
+            </div>
+
+            <div>
+                <div style="width: auto ;height: 75px;">
+                    <div class="ms-auto" style="width: auto;height: 50px;"></div>
+                    <div id="salemone" class=" saleman " style=" background-image:url(./Seasonal_Merchant.png); ">
+                    </div>
+                </div>
+                <div id="salerowoid" onmouseenter="msover(salemone)" onmouseleave="msout(salemone)" ;
+                    class="row salerow">
+                    <div class="col-3 saleimg"><img src="./稿.png" alt=""></div>
+                    <div class="col-6 saletext ">
+                        <h2>追魂鎬</h2><span>目前遊戲中最強的鎬，除了需要上古之鎬外還須找到上古鍛造爐</span>
+                    </div>
+                    <div class="col-3 salebtn">
+                        <p>4.99$</p><button onmouseenter="msbover(salemone)"
+                            onmouseleave="msbout(salemone)">buy</button>
+                    </div>
+                </div>
+                <div style="width: auto ;height: 75px;">
+                    <div class="ms-auto" style="width: auto;height: 50px;"></div>
+                    <div id="salemtwo" class=" saleman " style=" background-image:url(./Seasonal_Merchant.png); ">
+                    </div>
+                </div>
+                <div class="row salerow" onmouseenter="msover(salemtwo)" onmouseleave="msout(salemtwo)">
+                    <div class=" col-3 saleimg"><img src="./弓.png" alt=""></div>
+                    <div class="col-6 saletext ">
+                        <h2>幻影火星</h2><span>在海洋中尋找三個特殊物品才能合成，屬於遠程中最強的武器</span>
+                    </div>
+                    <div class="col-3 salebtn">
+                        <p>5.99$</p><button onmouseenter="msbover(salemtwo)"onmouseleave="msbout(salemtwo)">buy</button>
+                    </div>
+                </div>
+                <div style="width: auto ;height: 75px;">
+                    <div class="ms-auto" style="width: auto;height: 50px;"></div>
+                    <div id="salemthr" class=" saleman " style=" background-image:url(./Seasonal_Merchant.png); ">
+                    </div>
+                </div>
+                <div class="row salerow" onmouseenter="msover(salemthr)" onmouseleave="msout(salemthr)">
+                    <div class=" col-3 saleimg"><img src="./星光鸚鵡螺.png" alt=""></div>
+                    <div class="col-6 saletext ">
+                        <h2>星光鸚鵡螺</h2><span>需要在岩漿中釣魚取得，服用後可加最大生命100</span>
+                    </div>
+                    <div class="col-3 salebtn">
+                        <p>1.99$</p><button onmouseenter="msbover(salemthr)"onmouseleave="msbout(salemthr)">buy</button>
+                    </div>
+                </div>
+                <div style="width: auto ;height: 75px;">
+                    <div class="ms-auto" style="width: auto;height: 50px;"></div>
+                    <div id="salemfor" class=" saleman " style=" background-image:url(./Seasonal_Merchant.png); ">
+                    </div>
+                </div>
+                <div class="row salerow" onmouseenter="msover(salemfor)" onmouseleave="msout(salemfor)">
+                    <div class=" col-3 saleimg"><img src="./劍.png" alt=""></div>
+                    <div class="col-6 saletext ">
+                        <h2>符文之歌</h2><span>需在草原尋找遺跡，無耐久度限制</span>
+                    </div>
+                    <div class="col-3 salebtn">
+                        <p>2.99$</p><button onmouseenter="msbover(salemfor)"onmouseleave="msbout(salemfor)">buy</button>
+                    </div>
+                </div>
+                <div style="width: auto ;height: 75px;">
+                    <div class="ms-auto" style="width: auto;height: 50px;"></div>
+                    <div id="salemfiv" class=" saleman " style=" background-image:url(./Seasonal_Merchant.png); ">
+                    </div>
+                </div>
+                <div class="row salerow" onmouseenter="msover(salemfiv)" onmouseleave="msout(salemfiv)">
+                    <div class=" col-3 saleimg"><img src="./召喚皇冠.png" alt=""></div>
+                    <div class="col-6 saletext ">
+                        <h2>皇冠召唤人偶</h2><span>與遊戲Terraria合作，從史萊姆身上掉落號稱掉落率為0.3%</span>
+                    </div>
+                    <div class="col-3 salebtn">
+                        <p>0.99$</p><button onmouseenter="msbover(salemfiv)"onmouseleave="msbout(salemfiv)">buy</button>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="row m-5" style="text-align: left;">
+                <div class="col-2"><div class="stud"><div class="stdp"><img class="stp" src="./稿.png" alt=""></div>
+                <p>追魂鎬</p>
+                </div></div>
+                <div class="col-2"><div class="stud"><div class="stdp"><img class="stp" src="./星光鸚鵡螺.png" alt=""></div>
+                <p>星光鸚鵡螺</p>
+                </div></div>
+                <div class="col-2"><div class="stud"><div class="stdp"><img class="stp" src="./弓.png" alt=""></div>
+                <p>幻影火星</p>
+                </div></div>
+                <div class="col-2"><div class="stud"><div class="stdp"><img class="stp" src="./黃冠.png" alt=""></div>
+                <p>史萊姆王皇冠</p>
+                </div></div>
+                <div class="col-2"><div class="stud"><div class="stdp"><img class="stp" src="./劍.png" alt=""></div>
+                <p>符文之歌</p>
+                </div></div>
+                <div class="col-2"><div class="stud"><div class="stdp"><img class="stp" src="./召喚皇冠.png" alt=""></div>
+                <p>皇冠召唤人偶</p>
+                </div></div> -->
+        </div>
+
+    </div>
+
+
+
+
+    </div>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+    <script>
+        function signin() {
+            login.style.display = 'block'
+        }
+        function animkv() {
+            backp.style.display = "block";
+        }
+
+        function loginck() {
+            var x = userid.value;
+            var y = userpd.value;
+            console.log(y);
+            console.log(login.style.display)
+            if (x == '1234' && y == '1234') {
+                login.style.display = 'none';
+                loginbar.style.display = "none";
+                logout.style.display = 'block';
+                loginhi.innerText = 'welcome';
+            } else {
+                alarm.innerText = '帳號 or 密碼輸入錯誤'
+            }
+
+        }
+
+        function log_out() {
+            logout.style.display = 'none';
+            loginbar.style.display = "block"
+        }
+
+
+
+        function sobt(area) {
+            startp.style.display = 'none';
+            mucusp.style.display = 'none';
+            insectp.style.display = 'none';
+            abandonedp.style.display = 'none';
+            grassp.style.display = 'none';
+            moldp.style.display = 'none';
+            oceanp.style.display = 'none';
+            desertp.style.display = 'none';
+            area.style.display = 'block';
+        }
+
+        setInterval(function () {
+            var daten = new Date();
+            var recpc = new Date('2023-05-08');
+            recpc.setHours(12);
+
+            var overn = recpc - daten;
+            var dayn = Math.floor(overn / 86400000)
+            var hourn = Math.floor((overn - dayn * 86400000) / 3600000)
+            var minn = Math.floor((overn - dayn * 86400000 - hourn * 3600000) / 60000)
+            var secn = Math.floor((overn - dayn * 86400000 - hourn * 3600000 - minn * 60000) / 1000)
+
+            dayt.innerText = (Math.floor(dayn / 10)).toString();
+            dayd.innerText = (Math.floor(dayn % 10)).toString();
+            hourt.innerText = (Math.floor(hourn / 10)).toString();
+            hourd.innerText = (Math.floor(hourn % 10)).toString();
+            mint.innerText = (Math.floor(minn / 10)).toString();
+            mind.innerText = (Math.floor(minn % 10)).toString();
+            sect.innerText = (Math.floor(secn / 10)).toString();
+            secd.innerText = (Math.floor(secn % 10)).toString();
+
+            if ((secn % 10) == 9) {
+                sectid.className = 'sectc'
+            } else {
+                sectid.className = 'timerecd'
+            }
+            if ((secn % 10) == 9 && (Math.floor(secn / 10) == 5)) {
+                mindid.className = 'sectc'
+
+            } else {
+                mindid.className = 'timerecd'
+            }
+            if ((secn % 10) == 9 && (Math.floor(secn / 10) == 5) && minn % 10 == 9) {
+                mintid.className = 'sectc'
+            } else {
+                mintid.className = 'timerecd'
+            }
+            if ((secn % 10) == 9 && (Math.floor(secn / 10) == 5) && minn % 10 == 9 && (Math.floor(minn / 10) == 5)) {
+                hourdid.className = 'sectc'
+            } else {
+                hourdid.className = 'timerecd'
+            }
+            if ((secn % 10) == 9 && (Math.floor(secn / 10) == 5) && minn % 10 == 9 && (Math.floor(minn / 10) == 5) && hourn % 10 == 3) {
+                hourtid.className = 'sectc'
+            } else {
+                hourtid.className = 'timerecd'
+            }
+            if ((secn % 10) == 9 && (Math.floor(secn / 10) == 5) && minn % 10 == 9 && (Math.floor(minn / 10) == 5) && hourn % 10 == 3 && (Math.floor(hourn / 10) == 2)) {
+                daydid.className = 'sectc'
+            } else {
+                daydid.className = 'timerecd'
+            }
+            if ((secn % 10) == 9 && (Math.floor(secn / 10) == 5) && minn % 10 == 9 && (Math.floor(minn / 10) == 5) && hourn % 10 == 3 && (Math.floor(hourn / 10) == 2) && dayn % 10 == 9) {
+                daytid.className = 'sectc'
+            } else {
+                daytid.className = 'timerecd'
+            }
+        }, 1000)
+
+        setInterval(function () {
+            backp.style.display = 'none'
+        }, 5000)
+        function msover(changeman) {
+            changeman.className = "salemen"
+
+        }
+        function msbover(changemanb) {
+            changemanb.className = "salemanbuy"
+        }
+        function msbout(changemanb) {
+            changemanb.className = "salemanonbuy"
+        }
+        function msout(changeman) {
+            changeman.className = "salemans"
+            setTimeout(function () {
+                changeman.className = "saleman"
+            }, 1000)
+
+        }
+
+    </script>
+
+</body>
+
+</html>

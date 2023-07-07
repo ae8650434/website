@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>註冊</title>
+    <link rel="stylesheet" href="./_css/bootstrap.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Pixels&display=swap" rel="stylesheet">
+    <script src="./_js/bootstrap.bundle.js"></script>
+    <style>
+        #logo {
+            width: 40px;
+            text-align: center;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0, 0, 50px, 0;
+            display: flex;
+            display: inline-block;
+
+        }
+
+        .a {
+            display: inline-block;
+            color: white;
+            padding: 20px;
+        }
+
+        .a:hover {
+
+            background-color: white;
+            color: black;
+
+        }
+
+        .a ul {
+            display: none;
+            position: absolute;
+        }
+
+        .a:hover ul {
+            display: block;
+            background: linear-gradient(135deg, #1354FF 0%, #21287B 50%, #682ACA 100%);
+            text-decoration: none;
+            text-align: left;
+            list-style-type: none;
+        }
+
+        .a ul {
+            padding: 0;
+        }
+
+        .a li {
+            text-decoration: none;
+            text-align: left;
+            padding: 10px;
+            display: block;
+        }
+
+        .a a {
+            display: block !important;
+            text-decoration: none;
+            color: white;
+        }
+
+        .a .inli:hover {
+            background-color: white;
+        }
+
+        .a .inli:hover a {
+            color: black;
+        }
+
+        #sign_in {
+            text-decoration: none;
+            color: white;
+        }
+
+        #login {
+
+            position: fixed;
+            z-index: 1;
+            background-color: rgba(168, 168, 168, 0.6);
+            width: 100%;
+            height: 100%;
+
+        }
+
+        #loginform {
+            position: relative;
+            top: 120px;
+            height: 500px;
+            width: 400px;
+        }
+
+        #loginform>div {
+            text-align: center;
+
+            width: 100px;
+            padding: 20px;
+        }
+
+        #loginform>h5 {
+            text-align: left;
+        }
+
+        #loginform button {
+            border-radius: 10px;
+            width: 200px;
+        }
+
+
+        #signin,
+        #signup {
+            border: none;
+            color: white;
+
+            text-align: center;
+            text-decoration: none;
+            background-color: black;
+        }
+
+        #logout button {
+            border: none;
+            color: white;
+
+            text-align: center;
+            text-decoration: none;
+            background-color: black;
+        }
+
+        #top {
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            width: 50px;
+            height: 50px;
+            background-image: url("./top-removebg-preview.png");
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+
+        #top:hover {
+
+            width: 55px;
+            height: 55px;
+        }
+
+
+
+
+
+
+
+
+        .sign {
+            margin: 10px;
+        }
+
+        .signset {
+            width: 150px;
+            display: inline-block;
+            text-align: right;
+        }
+
+        input:valid {
+
+            background-color: lightgreen;
+        }
+
+        input:invalid {
+
+            background-color: lightcoral;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Rubik+Pixels&display=swap');
+
+        #rado {
+            border: 1px solid black;
+            background-color: yellow;
+            font-family: 'Rubik Pixels', cursive;
+            font-size: 40px; 
+            margin: 10px;
+            padding: 0,10px;     
+        }
+    </style>
+
+</head>
+
+<body style="background-color: rgba(3, 0, 168, 0.432);">
+
+    <div class="w-100 d-flex" style="background-color: black; height: 60px;position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;">
+        <div style="position: relative;background-color: black; width: 55%;height: 50px;text-align: right;">
+            <div>
+                <a href="./topic_3.html"><img src="./LOGO-removebg-preview.png" style="display: inline-block;"
+                        id="logo"></a>
+                <ul>
+
+                    <li class="a ">商店
+                        <ul>
+                            <li class="inli"><a href="">首頁</a></li>
+                            <li class="inli"><a href="">希望清單</a></li>
+                        </ul>
+                    </li>
+                    <li class="a">社群</li>
+                    <li class="a">客服中心</li>
+                </ul>
+            </div>
+        </div>
+        <div style="display: block; " class="ms-auto" style="width: 100px ;height: 50px;">
+            <div style="display:none ;" id="logout">
+                <span id="loginhi" style="color:white; text-align: center;"></span>
+                <button onclick="log_out()">登出</button>
+            </div>
+            <ul id="loginbar">
+                <li><button onclick="signin()" id="signin">登入</button> </li>
+                <li><a href="./sign_up.html"><button id="signup">註冊</button> </a> </li>
+            </ul>
+        </div>.
+    </div>
+
+    <div id="login" style="display: none;">
+        <div class="container   bg-warning " id="loginform">
+            <div>
+                <h5>帳號</h5>
+                <input type="text" id='userid' required>
+            </div>
+            <div>
+                <h5>密碼</h5>
+                <input type="password" id="userpd" required>
+            </div>
+            <div class='w-100' style="text-align: left;">
+                <input type="checkbox">
+                <span style="font-size: 12px;">保持登入</span>
+            </div>
+            <div class="w-100" style="text-align: left;">
+                <p style="color: red;" id="alarm"></p>
+            </div>
+            <div class="w-100">
+                <button onclick="loginck()">登入</button>
+            </div>
+            <hr>
+            <div class="w-100" style="text-align: left;"><a href="">忘記密碼</a></div>
+        </div>
+    </div>
+    <a href="#">
+        <div id="top"></div>
+    </a>
+
+
+
+    <div class="container">
+        <br><br><br><br><br>
+        <form id="signform" action="./topic_3.html"
+            style="background-color: rgba(218, 230, 118, 0.685); border-radius:5px">
+            <h1>會員註冊</h1>
+            <div class="sign">
+                <div class="signset">
+                    <label>帳號:</label>
+                </div>
+                <input type="text" required>
+
+            </div>
+            <div class="sign">
+                <div class="signset">
+                    <label>密碼:</label>
+                </div>
+                <input type="password" value="" id="pd" required>
+
+            </div>
+            <div class="sign">
+                <div class="signset">
+                    <label>再次輸入密碼:</label>
+                </div>
+                <input type="password" value="" id="pdt" required>
+
+            </div>
+            <div class="sign">
+                <div class="signset">
+                    <label>名稱:</label>
+                </div>
+                <input type="text" required>
+
+            </div>
+            <div class="sign">
+                <div class="signset">
+                    <label>電子郵件信箱:</label>
+                </div>
+                <input type="email">
+
+            </div>
+            <div class="sign">
+                <div class="signset">
+                    <label>手機:</label>
+                </div>
+                <input type="tel" placeholder="09########" pattern="[0]{1}[9]{1}[0-9]{2}[0-9]{3}[0-9]{3}">
+            </div>
+            <div class="sign">
+                <div class="signset">
+                    <label>驗證碼:</label>
+                </div>
+                <input type="text" id="radck" maxlength="4" required>
+                <span id="rado" ></span>
+                <button style="border: none; background-color:rgba(218, 230, 118, 0) ;" type="button"
+                    onclick="rad()"><img style="width: 30px;height: 30px;object-fit: contain" src="./change.png"
+                        alt=""></button>
+            </div>
+            <div class="sign">
+                <div class="signset">
+
+                    <input id="chk" type="checkbox" checked>同意使用者條款
+
+                </div>
+            </div>
+            <div class="sign">
+                <div class="signset">
+
+                    <button id="signsend" onclick="signupck()" type="button" style="border-radius: 5px;">送出</button>
+                </div>
+                <span id="signwarn" style="padding: 20px; color: red;"> </span>
+
+            </div>
+
+    </div>
+
+    </div>
+
+
+
+    <script>
+        function signin() {
+            login.style.display = 'block'
+        }
+
+
+        function loginck() {
+            var x = userid.value;
+            var y = userpd.value;
+            console.log(y);
+            console.log(login.style.display)
+            if (x == '1234' && y == '1234') {
+                login.style.display = 'none';
+                loginbar.style.display = "none";
+                logout.style.display = 'block';
+                loginhi.innerText = 'welcome';
+            } else {
+                alarm.innerText = '帳號 or 密碼輸入錯誤'
+            }
+
+        }
+
+        function log_out() {
+            logout.style.display = 'none';
+            loginbar.style.display = "block"
+        }
+
+
+        var a = Math.random();
+        b = Math.floor(a * 10000);
+        c = b.toString().padStart(4, '0')
+        console.log(c)
+        rado.innerText = c;
+
+        function rad() {
+            var a = Math.random();
+            b = Math.floor(a * 10000);
+
+            c = b.toString().padStart(4, '0')
+            rado.innerText = c;
+
+        }
+        console.log(chk.checked)
+
+        function signupck() {
+            var psd = pd.value;
+            var psdt = pdt.value;
+
+
+            if (psd != psdt) {
+                signwarn.innerText = '第二次密碼輸入與第一次不同'
+            }
+
+            if (radck.value != c) {
+                signwarn.innerText = '驗證碼錯誤'
+            }
+            if (chk.checked == false) {
+                signwarn.innerText = '未同意使用者條款'
+            }
+
+            if (psd == psdt && radck.value == c && chk.checked == true) {
+                signsend.type = 'submit'
+                signwarn.innerText = ''
+            }
+        }
+
+
+    </script>
+
+</body>
+
+</html>
